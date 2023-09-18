@@ -8,6 +8,11 @@
   </nav>
   <div>
     <h2>Ultimas 5 negociações</h2>
+      <div *ngFor="let data of ultimas5Datas">
+        <p>Data: {{ data }}</p> 
+        <p>Open: {{ this.ativosArray["Time Series (Daily)"][data]['1. open'] | number: '1.2-2' }}</p>
+        <p>Close: {{ this.ativosArray["Time Series (Daily)"][data]['4. close'] | number: '1.2-2' }}</p>
+      </div>
   </div>
   <div>
     <h2>Tabela Mínimo, Médio, Máximo</h2>
