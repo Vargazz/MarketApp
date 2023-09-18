@@ -19,9 +19,13 @@ export class UltimasNegociacoesComponent implements OnInit{
   }
 
   searchButton() {
+    this.ativosService.recebeInput(this.inputSearch)
+
     this.ativosService.obterAtivo()
       .then(ativo => console.log(ativo))
       .catch(error => console.log(error))
+
+    this.inputSearch = ""
   }
 
 }
