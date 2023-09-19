@@ -27,29 +27,30 @@ export class UltimasNegociacoesComponent implements OnInit{
   private chart: any;
   ngOnInit(): void {
     this.chart = null
-    this.searchButton()
   }
 
   @ViewChild('myChart') private chartRef!: ElementRef;
 
 
   setUltimo() {
-    const timeSeries = this.ativosArray["Time Series (Daily)"];
-    const altSeries = Object.keys(timeSeries).reverse();
-    this.ultimas5Datas = altSeries.slice(-5).reverse();
+    const timeSeries = this.ativosArray["Time Series (Daily)"]
+    const altSeries = Object.keys(timeSeries).reverse()
+    this.ultimas5Datas = altSeries.slice(-5).reverse()
+    console.log(this.ativosArray["Time Series (Daily)"]);
+
   }
   
   calcValueGrafic() {
     const highValues = this.ultimas5Datas.map(date => parseFloat(this.ativosArray["Time Series (Daily)"][date]['2. high']));
     const lowValues = this.ultimas5Datas.map(date => parseFloat(this.ativosArray["Time Series (Daily)"][date]['3. low'])); 
     
-    this.maxValue = Math.max(...highValues);
-    this.minValue = Math.min(...lowValues);
-    this.averageValue =((this.maxValue + this.minValue) / 2);
+    this.maxValue = Math.max(...highValues)
+    this.minValue = Math.min(...lowValues)
+    this.averageValue =((this.maxValue + this.minValue) / 2)
   }
   
   searchButton() {
-    this.ativosService.recebeInput(this.inputSearch);
+    this.ativosService.recebeInput(this.inputSearch)
     
     this.ativosService.obterAtivo().subscribe((ativo) => {
       
@@ -58,7 +59,7 @@ export class UltimasNegociacoesComponent implements OnInit{
       this.setUltimo()
       this.calcValueGrafic()
       this.createChart();
-    });
+    })
     this.inputSearch = ""
   }
 

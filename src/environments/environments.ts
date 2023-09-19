@@ -3,4 +3,4 @@ export const evironment = {
 }
 
 export const API_PATH = 'https://www.alphavantage.co/'
-export const API_KEY = 'C0NLZXFV825HA2LI'
+export const API_KEY = 'LXF5URPV0R9EIAFT'

@@ -19,6 +19,6 @@ export class AtivosBolsaService {
   }
 
   obterAtivo(): Observable<[]> {
-    return this.httpCliente.get<[]>(`${API_PATH}query?function=TIME_SERIES_DAILY&symbol=PETR4.SA&apikey=${API_KEY}`);
+    return this.httpCliente.get<[]>(`${API_PATH}query?function=TIME_SERIES_DAILY&symbol=${this.ATIVO}SA&apikey=${API_KEY}`);
   }
 }
