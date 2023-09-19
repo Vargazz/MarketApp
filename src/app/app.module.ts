@@ -6,11 +6,12 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UltimasNegociacoesComponent } from './ultimas-negociacoes/ultimas-negociacoes.component';
+// import { GraficComponent } from './grafic/grafic.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UltimasNegociacoesComponent
+    UltimasNegociacoesComponent,
   ],
   imports: [
     BrowserModule,
