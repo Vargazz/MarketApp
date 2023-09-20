@@ -6,8 +6,7 @@ body {
 
 .lastfive {
   border-bottom: solid rgba(153, 153, 153, 0.616) 2px ;
-  /* background-color: red; */
-  /* color: white; */
+  
   display: flex;
   font-size: 23px;
   justify-content: space-around;
@@ -124,4 +123,9 @@ body {
   border-radius: 10px;
   background-color: rgba(119, 173, 173, 0.158);
   font-size: 20px;
+}
+
+.grafico {
+  border: solid rgba(173, 172, 172, 0.897) 2px;
+  margin: 20px
 }

@@ -18,6 +18,7 @@ export class UltimasNegociacoesComponent implements OnInit{
   public maxValue: number = 0
   public minValue: number = 0
   public averageValue: number = 0
+  public class: boolean = false
 
 
   constructor(private ativosService: AtivosBolsaService) {
@@ -25,6 +26,7 @@ export class UltimasNegociacoesComponent implements OnInit{
   }
   
   private chart: any;
+
   ngOnInit(): void {
     this.chart = null
   }
@@ -36,8 +38,6 @@ export class UltimasNegociacoesComponent implements OnInit{
     const timeSeries = this.ativosArray["Time Series (Daily)"]
     const altSeries = Object.keys(timeSeries).reverse()
     this.ultimas5Datas = altSeries.slice(-5).reverse()
-    console.log(this.ativosArray["Time Series (Daily)"]);
-
   }
   
   calcValueGrafic() {
@@ -55,6 +55,7 @@ export class UltimasNegociacoesComponent implements OnInit{
     this.ativosService.obterAtivo().subscribe((ativo) => {
       
       this.ativosArray = ativo
+
       
       this.setUltimo()
       this.calcValueGrafic()
@@ -98,9 +99,11 @@ export class UltimasNegociacoesComponent implements OnInit{
         }
       }
     });
+    this.class = true
   } else  {
     this.chart.destroy();
     this.chart = null
+    this.class = false
     const ctx = this.chartRef.nativeElement.getContext('2d');
     this.chart = new Chart(ctx, {
       type: 'bar',
@@ -134,6 +137,7 @@ export class UltimasNegociacoesComponent implements OnInit{
         }
       }
     })
+    this.class = true
     }
   }
 
