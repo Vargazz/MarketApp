@@ -1,0 +1,35 @@
+<header class="headerMarket">
+  <h1 class="title">Market App</h1>
+  <ul class="dinamico">
+    <li><span class="list">Inovação</span></li>
+    <li><span class="list">Conhecimento</span></li>
+    <li><span class="list">Qualidade</span></li>
+  </ul>
+</header>
+<body>
+  <nav class="nav-bar"> 
+    <input [(ngModel)]="inputSearch" class="input-search">
+    <button (click)="searchButton()" class="button-search">Pesquisar</button>
+  </nav>
+  <div>
+    <div class="divFive">
+      <div class="headerFive">
+        <p>Data</p>
+        <p>Abertura</p>
+        <p>Fechamento</p>
+      </div>
+      <div *ngFor="let data of ultimas5Datas" class="lastfive">
+        <p>{{ data }}</p> 
+        <p>{{ this.ativosArray["Time Series (Daily)"][data]['1. open'] | number: '1.2-2' }}</p>
+        <p>{{ this.ativosArray["Time Series (Daily)"][data]['4. close'] | number: '1.2-2' }}</p>
+      </div>
+  </div>
+  </div>
+  <div>
+    <div [ngClass]="{
+      'grafico': this.class
+    }">
+      <canvas #myChart width="200" height="400"></canvas>
+    </div>
+  </div>
+</body>

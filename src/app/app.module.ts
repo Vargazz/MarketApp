@@ -1,0 +1,25 @@
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http'
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { UltimasNegociacoesComponent } from './ultimas-negociacoes/ultimas-negociacoes.component';
+// import { GraficComponent } from './grafic/grafic.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    UltimasNegociacoesComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
