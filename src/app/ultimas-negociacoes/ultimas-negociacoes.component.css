@@ -66,7 +66,57 @@ body {
   padding: 0;
   height: 60px;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  font-size: 30px;
 }
+
+
+.dinamico {
+  margin-left: 35px;
+  list-style: none;
+  height: 90px;
+  line-height: 90px;
+  overflow: hidden;
+}
+.list {
+  list-style: none;
+  color: white;
+  left:0;
+  position: relative;
+  top: 0;
+  animation: slide  6s steps(4) infinite;
+  font-size: 30px;
+  top: 12px;
+}
+
+@keyframes slide {
+  100%{
+    top: -360px;
+  }
+}
+
+.list::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  border-left: 2px solid white;
+  animation: typing 1.5s steps(20) infinite;
+  background-color:  rgb(37, 37, 37); ;
+}
+.list {
+  position: relative;
+}
+
+@keyframes typing{
+  100%{
+    left: 100%;
+    margin: 0 -35px 0 35px;
+  }
+}
+
 
 .input-search {
   height: 40px;
